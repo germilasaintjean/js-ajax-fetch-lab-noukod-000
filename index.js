@@ -13,7 +13,7 @@ function showResults(json) {
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   //use fetch to fork it!
-  fetch('https://api.github.com/repos/jquery/jquery/commits')
+  fetch('https://github.com/learn-co-curriculum/javascript-fetch-lab.git')
     .then(resp => resp.json())
     .then(json => console.log(json));
 }
@@ -21,5 +21,12 @@ function forkRepo() {
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
+  const token = 'YOUR_TOKEN_HERE';
+
+  fetch('https://api.github.com/user/repos', {
+    headers: {
+      Authorization: `token ${token}`
+    }
+  }).then(res => res.json()).then(json => console.log(json));
   return ''
 }
