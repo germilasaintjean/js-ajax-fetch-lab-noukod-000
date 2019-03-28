@@ -9,7 +9,7 @@ function getIssues() {
     }
   })
   .then(res => res.json())
-  .then(json => showIssues(json))
+  .then(json => console.log(json))
 }
 
 function showIssues(json) {
@@ -51,7 +51,7 @@ function forkRepo() {
     }
   })
   .then(res => res.json())
-  .then(json => showResults(json))
+  .then(json => console.log(json))
 }
 
 function getToken() {
